@@ -28,10 +28,10 @@
       <button class="button" onclick="outputDisplay(2)">2</button>
       <button class="button" onclick="outputDisplay(3)">3</button>
       <button class="button">-</button>
-      <button class="button">clear</button>
+      <button class="button" onclick="clear()">clear</button>
       <button class="button" onclick="outputDisplay(0)">0</button>
       <button class="button">+</button>
-      <button class="button">=</button>
+      <button class="button" onclick="console.log(operate(`${operater}`, [numOne, numTwo]))">=</button>
   
     </div>
 

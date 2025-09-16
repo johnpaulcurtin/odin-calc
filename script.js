@@ -11,6 +11,10 @@ function divide(a,b){
   return a / b;
 }
 
+let numOne= 4;
+let numTwo= 3;
+let operater = '/';
+
 function operate(o, [a,b]){
   if (o === '+'){
     return add(a,b)
@@ -19,14 +23,13 @@ function operate(o, [a,b]){
   } else if (o === '*'){
     return multiply(a,b)
   } else if (o === '/'){
-    return divide(a,b)
+    displayArray.push(divide(a,b))
+    display(); //one possible option for display result
   } 
 }
 
 
-let numOne= '';
-const numTwo= '';
-const operand= '';
+
 
 
 let displayArray = [];
@@ -36,13 +39,15 @@ function outputDisplay(x){
   displayArray.push(`${x}`)
   console.log(`${x}`)
   display();
+  console.log(displayArray)
 };
 
 function display(){
   const div = document.getElementById('output');
   const join = displayArray.join('')
-  div.innerText = `${join}`;
-}
+  const dec = Math.floor(`${join}` * 100) / 100;
+  div.innerText = `${dec}`;
+};
 
-
+console.log(displayArray)
 
