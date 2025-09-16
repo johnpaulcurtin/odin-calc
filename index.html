@@ -12,22 +12,24 @@
 
 <body>
   <div class="container">
-    <div id="screen"></div>
+    <div id="screen">
+      <div id="output">JPCalculator</div>
+    </div>
     <div id="buttons">
-      <button class="button">7</button>
-      <button class="button">8</button>
-      <button class="button">9</button>
-      <button class="button">*</button>
-      <button class="button">4</button>
-      <button class="button">5</button>
-      <button class="button">6</button>
+      <button class="button" onclick="outputDisplay(7)">7</button>
+      <button class="button" onclick="outputDisplay(8)">8</button>
+      <button class="button" onclick="outputDisplay(9)">9</button>
+      <button class="button" >*</button>
+      <button class="button" onclick="outputDisplay(4)">4</button>
+      <button class="button" onclick="outputDisplay(5)">5</button>
+      <button class="button" onclick="outputDisplay(6)">6</button>
       <button class="button">/</button>
-      <button class="button">1</button>
-      <button class="button">2</button>
-      <button class="button">3</button>
+      <button class="button" onclick="outputDisplay(1)">1</button>
+      <button class="button" onclick="outputDisplay(2)">2</button>
+      <button class="button" onclick="outputDisplay(3)">3</button>
       <button class="button">-</button>
       <button class="button">clear</button>
-      <button class="button">0</button>
+      <button class="button" onclick="outputDisplay(0)">0</button>
       <button class="button">+</button>
       <button class="button">=</button>
   

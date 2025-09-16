@@ -23,4 +23,26 @@ function operate(o, [a,b]){
   } 
 }
 
-console.log(operate('/', [5, 10]))
+
+let numOne= '';
+const numTwo= '';
+const operand= '';
+
+
+let displayArray = [];
+
+
+function outputDisplay(x){
+  displayArray.push(`${x}`)
+  console.log(`${x}`)
+  display();
+};
+
+function display(){
+  const div = document.getElementById('output');
+  const join = displayArray.join('')
+  div.innerText = `${join}`;
+}
+
+
+

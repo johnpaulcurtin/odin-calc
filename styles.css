@@ -19,6 +19,7 @@
 }
 
 #screen{
+  display: flex;
   height: 100px;
   width: 300px;
   background-color:rgba(7, 158, 140, 0.371);
@@ -26,6 +27,17 @@
   border-style: groove;
   border-width: 4px;
   border-radius: 25px;  
+  justify-content: center;
+  align-items: center;
+}
+
+#output{
+  height: 60px;
+  font-size: 60px;
+  text-align: right;
+  overflow:
+
+
 }
 
 #buttons{
