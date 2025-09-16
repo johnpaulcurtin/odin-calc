@@ -14,9 +14,6 @@ function divide(a,b){
 
 
 function operate(o, [a, b]){
-  console.log(a);
-  console.log(b);
-  console.log(o);
   displayArray = [];
   if (o === '+'){
     displayArray.push(add(a,b));
@@ -27,22 +24,31 @@ function operate(o, [a, b]){
   } else if (o === '*'){
     displayArray.push(multiply(a,b));
     display();
+  } else if (o === '/' && b === 0){
+    const div = document.getElementById('output');
+    div.style.fontSize='25px';
+    div.style.textAlign= 'center';
+    div.innerText = `Thou Shalt Not
+     Divide By 
+     Zero`;
   } else if (o === '/'){
     displayArray.push(divide(a,b))
-    display(); //one possible option for display result
-  } 
+    display(); 
+  }; 
+  numOne= Number(displayArray);
+  numTwo= '';
+  displayArray= [];
 }
 
 
-let numOne= "";
-let numTwo= 2;
+let numOne= '';
+let numTwo= '';
 let operator= '';
 let displayArray = [];
 
 
 function outputDisplay(x){
-  displayArray.push(x); //changed from `${x}`
-  console.log(x);
+  displayArray.push(x); 
   display();
 };
 
@@ -50,15 +56,38 @@ function display(){
   const div = document.getElementById('output');
   const join = displayArray.join('')
   const dec = Math.floor(`${join}` * 100) / 100;
-  div.innerText = dec; //changed from `${dec} if issues later revert
+  div.innerText = dec; 
+  if (operator === ''){
+    numOne= Number(join);}
+    else if (operator !== '' && numTwo !== ''){
+      numOne= Number(join);
+    }
+    else{
+      numTwo= Number(join);
+    };
+  
 };
 
 function operatorChoice(x){
-  numOne = (Number(displayArray.join('')));
-  operator = `${x}`;
+  
+  if (operator !==''){
+    
+    operate(operator,[numOne,numTwo]);
+    operator = `${x}`;
+    console.log(numOne, numTwo);
+     
+  } else if (operator === ''){
   displayArray.length = 0;
-  display();
+  operator = `${x}`;
+  };
 };
 
+function clearButton(){
+numOne= '';
+numTwo= '';
+operator= '';
+displayArray.length = 0;
+const div = document.getElementById('output');
+div.textContent = 'JPCalculator';
 
-
+}
