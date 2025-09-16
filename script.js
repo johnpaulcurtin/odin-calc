@@ -26,7 +26,7 @@ function operate(o, [a, b]){
     display();
   } else if (o === '/' && b === 0){
     const div = document.getElementById('output');
-    div.style.fontSize='25px';
+    div.style.fontSize='20px';
     div.style.textAlign= 'center';
     div.innerText = `Thou Shalt Not
      Divide By 
@@ -37,6 +37,7 @@ function operate(o, [a, b]){
   }; 
   numOne= Number(displayArray);
   numTwo= '';
+  operator='';
   displayArray= [];
 }
 
@@ -55,14 +56,12 @@ function outputDisplay(x){
 function display(){
   const div = document.getElementById('output');
   const join = displayArray.join('')
-  const dec = Math.floor(`${join}` * 100) / 100;
+  const dec = Math.floor(`${join}` * 10000) / 10000;
   div.innerText = dec; 
+
   if (operator === ''){
     numOne= Number(join);}
-    else if (operator !== '' && numTwo !== ''){
-      numOne= Number(join);
-    }
-    else{
+    else if (operator !== ''){
       numTwo= Number(join);
     };
   
