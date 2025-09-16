@@ -11,17 +11,22 @@ function divide(a,b){
   return a / b;
 }
 
-let numOne= 4;
-let numTwo= 3;
-let operater = '/';
 
-function operate(o, [a,b]){
+
+function operate(o, [a, b]){
+  console.log(a);
+  console.log(b);
+  console.log(o);
+  displayArray = [];
   if (o === '+'){
-    return add(a,b)
+    displayArray.push(add(a,b));
+    display();
   } else if (o === '-'){
-    return subtract (a,b)
+    displayArray.push(subtract(a,b));
+    display();
   } else if (o === '*'){
-    return multiply(a,b)
+    displayArray.push(multiply(a,b));
+    display();
   } else if (o === '/'){
     displayArray.push(divide(a,b))
     display(); //one possible option for display result
@@ -29,25 +34,31 @@ function operate(o, [a,b]){
 }
 
 
-
-
-
+let numOne= "";
+let numTwo= 2;
+let operator= '';
 let displayArray = [];
 
 
 function outputDisplay(x){
-  displayArray.push(`${x}`)
-  console.log(`${x}`)
+  displayArray.push(x); //changed from `${x}`
+  console.log(x);
   display();
-  console.log(displayArray)
 };
 
 function display(){
   const div = document.getElementById('output');
   const join = displayArray.join('')
   const dec = Math.floor(`${join}` * 100) / 100;
-  div.innerText = `${dec}`;
+  div.innerText = dec; //changed from `${dec} if issues later revert
 };
 
-console.log(displayArray)
+function operatorChoice(x){
+  numOne = (Number(displayArray.join('')));
+  operator = `${x}`;
+  displayArray.length = 0;
+  display();
+};
+
+
 
